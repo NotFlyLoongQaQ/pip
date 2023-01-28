@@ -7,8 +7,8 @@ import warnings
 # in pip commands check, freeze, install, list and show,
 # when invoked as python -m pip <command>
 if sys.path[0] in ("", os.getcwd()):
-    sys.path.pop(0)
-
+    tmp = sys.path.pop(0)
+    del tmp
 # If we are running from a wheel, add the wheel to sys.path
 # This allows the usage python pip-*.whl/pip install pip-*.whl
 if __package__ == "":
